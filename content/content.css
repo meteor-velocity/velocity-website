@@ -1,0 +1,33 @@
+.main {
+  margin-top: 60px; /*space for fixed nav*/
+}
+
+.logo {
+  text-align: center;
+}
+
+.logo img {
+  width: 350px;
+}
+
+.logo h2 {
+  font-size: 120%;
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+.feature .center-block {
+  width: 230px;
+}
+
+.feature h2 {
+  margin-top: 30px;
+  font-size: 130%;
+  text-align: center;
+  width: 230px;
+}
+
+.feature p {
+  text-align: justify;
+  width: 230px;
+}

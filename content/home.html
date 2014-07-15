@@ -1,0 +1,57 @@
+<template name="home">
+
+<div class="logo">
+    <div class='home-logo'>
+      <img  src="images/velocity_logo.svg" alt="Velocity">
+    </div>
+    
+    <h2>The official testing framework of Meteor 1.0</h2>
+</div>
+
+<p>
+  Meteor makes it easy to make modern web apps. Now Velocity makes it easy to test them, too. Your tests update reactively, just like your apps. And since it's the officially sanctioned testing framework for Meteor, you can use it with confidence.
+</p>
+
+<div class="row">
+  <div class="col-sm-4 feature">
+    <div class="center-block">
+      <h2>Simple, Fast setup</h2>
+      <img src="http://placehold.it/230x200">
+      <p>Setup your test environment in a few minutes using standard Meteor smart packages</p>
+    </div>
+  </div>
+  <div class="col-sm-4 center-block feature">
+    <div class="center-block">
+      <h2>Instant Feedback</h2>
+      <img src="http://placehold.it/230x200">
+      <p>Velocity uses Meteor's reactivity to update your tests any time you save your code.</p>
+    </div>
+  </div>
+  <div class="col-sm-4 center-block feature">
+    <div class="center-block">
+      <h2>Multiple Frameworks</h2>
+      <img src="http://placehold.it/230x200">
+      <p>Velocity can accept multiple testing frameworks. Use Jasmine, Mocha, Nightwatch/Selenium, and others to create a complete testing solution.</p>
+    </div>
+  </div>
+</div>
+
+{{#markdown}}
+
+## Start Testing Your App in Minutes
+If you just want to get started testing your app, go to your app's root directory and run:
+
+    mrt velocity-quick-start
+
+This will install Velocity core, the Velocity HTML reporter, and two testing plugins, Jasmine Unit and Mocha Web, as well as some sample tests. Look for the sample tests in your app's `tests/` directory, and start testing! [Learn more about getting started with Velocity.]({{pathFor 'getting-started'}})
+
+You can also see Meteor's leaderboard example with working tests by playing with [Velocity's example application](https://github.com/xolvio/velocity-example).
+
+## How Velocity Works
+Velocity accepts two kinds of plugin: testing and reporting. Velocity watches your `tests/` directory and sends test files to the correct testing plugin. The testing plugin performs the tests and sends results for each test back to Velocity as they complete. Velocity then combines the results from all of the testing plugins and outputs them via one or more reporting plugins. When the app or tests change, Velocity will rerun your tests and reactively update the results. Reporting plugins can output the results in your app in an overlay, via structured data (e.g., JSON) for continuous integration, or other formats.
+
+## Velocity is a community
+Velocity is designed from the ground up to encourage the development of new plugins. The Velocity team has provided several plugins for testing and reporting, but, like Meteor itself, Velocity is modular and does not favor one plugin over another. Velocity provides a number of common services such as the creation of mirrors apps for isolation and instrumentation, running of setup code (fixtures), automatic stubbing for unit tests, and more. It's easy to develop new testing systems and reports for Velocity. [Learn how to build a Velocity plugin.]()
+
+{{/markdown}}
+</template>

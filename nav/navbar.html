@@ -1,0 +1,43 @@
+<template name='navItems'>
+  <li class="{{ activeIfTemplateIs 'getting-started' }}">
+    <a href="{{ pathFor 'getting-started'}}">Getting Started</a>
+  </li>
+  <li class="{{ activeIfTemplateIs 'user-guide' }}">
+    <a href="{{pathFor 'user-guide'}}">User Guide</a>
+  </li>
+  <li class="{{ activeIfTemplateIs 'plugins' }}">
+    <a href="{{pathFor 'plugins'}}">Plug-ins</a>
+  </li>
+  <li class="{{ activeIfTemplateIs 'about' }}">
+    <a href="{{pathFor 'about'}}">About</a>
+  </li>
+</template>
+
+
+<template name="navBrand">
+  <a class="navbar-brand" href="{{ pathFor 'home' }}"><img src="images/velocity_logo.svg" alt="Velocity"></a>
+</template>
+
+<!-- bootstrap navbar boilerplate: don't change -->
+<template name='nav'>
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        {{> navBrand}}
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          {{> navItems}}
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+</template>
