@@ -3,5 +3,37 @@
 
 #Getting Started
 
+Velocity is super simple to get started with. You actually pick the framework you want to work with and install that. For this post, let's give Jasmine-unit a try by type `mrt add jasmine-unit` in your app. You will also need to install a reporter as well, so `mrt add velocity-html-report` to get that going.
+
+Let's start with an easy test for the leaderboard example:
+
+```js
+
+(function () {
+    "use strict";
+
+    jasmine.DEFAULT_TIMEOUT_INTERVAL = jasmine.getEnv().defaultTimeoutInterval = 20000;
+
+    describe("Template.leaderboard.players", function () {
+
+        it("asks for the players to be primarily in descending score order, then in alphabetical order and returns as is", function () {
+            var someLocalCollectionCursor = {};
+            Players.find = function (selector, options) {
+                expect(options.sort.score).toBe(-1);
+                expect(options.sort.name).toBe(1);
+                return someLocalCollectionCursor;
+            };
+            expect(Template.leaderboard.players()).toBe(someLocalCollectionCursor);
+        });
+    });
+});
+
+```
+
+Since you are doing unit-testing, you need to mock out some of the calls being made inside the template. Jasmine works by grouping code into blocks, in this case we wrote a describe block and put the test inside of it. Each test is denoted by the it block of code. 
+
+The test starts off by setting up a blank javascript object as a stub for a cursor. Then we mock out the Players.find call and set up some expectations on the options being passed in, and finished up the mock by returning our stubbed cursor. Lastly, we set up an expectation that Template.leaderboard.players() should be equal to our stub cursor.
+
+The velocity magic kicks in when we put this test into the tests folder in the root of the app and we name is `leaderboard-jasmine-unit.js`. Velocity recognizes that the jasmine-unit.js ending is a Jasmine unit test and will send our test to the jasmine unit framework to be run. The jasmine-unit framework will then use the test mirror of the leaderboard app and execute it's test suite and return the results back to velocity for reporting. Now you have the magic of a reactive test suite!
 {{/markdown}}
 </template>
