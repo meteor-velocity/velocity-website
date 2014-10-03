@@ -16,18 +16,6 @@
   margin-bottom: 40px;
 }
 
-.feature .center-block {
-  width: 230px;
-}
-
-.feature h2 {
-  margin-top: 30px;
-  font-size: 130%;
+.center {
   text-align: center;
-  width: 230px;
-}
-
-.feature p {
-  text-align: justify;
-  width: 230px;
 }

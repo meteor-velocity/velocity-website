@@ -3,37 +3,45 @@
 
 #Getting Started
 
-Velocity is super simple to get started with. You actually pick the framework you want to work with and install that. For this post, let's give Jasmine-unit a try by type `mrt add jasmine-unit` in your app. You will also need to install a reporter as well, so `mrt add velocity-html-report` to get that going.
+This guide will get you started started with Velocity in a few minutes. Here are a few ways to begin:
 
-Let's start with an easy test for the leaderboard example:
+## I want to add testing to my app
+If you are relatively new to testing or just want to keep things simple, we recommend beginning with an integration testing framework. **Integration testing** gives you access to the full application environment in a mirror process. The mirror can run without affecting your main live app, so it will not interfere with manual tests and anything else you need to do with your app while you develop. These tests are also fast enough to give you real-time feedback. Velocity currently has two packages that implement integration testing, and you can choose based on features or the syntax that you prefer.
 
-```js
+### Adding Mocha
+https://atmospherejs.com/mike/mocha
 
-(function () {
-    "use strict";
+### Adding Jasmine
+https://atmospherejs.com/?q=jasmine
 
-    jasmine.DEFAULT_TIMEOUT_INTERVAL = jasmine.getEnv().defaultTimeoutInterval = 20000;
+## I want to see an example
+You can see a working example of the Meteor Leaderboard example app with working tests by downloading the [velocity demo](https://github.com/meteor-velocity/velocity-example).
 
-    describe("Template.leaderboard.players", function () {
+    # clone the velocity-example repo and run meteor
+    $ git clone https://github.com/xolvio/velocity-example.git
+    $ cd velocity-example
+    $ meteor
 
-        it("asks for the players to be primarily in descending score order, then in alphabetical order and returns as is", function () {
-            var someLocalCollectionCursor = {};
-            Players.find = function (selector, options) {
-                expect(options.sort.score).toBe(-1);
-                expect(options.sort.name).toBe(1);
-                return someLocalCollectionCursor;
-            };
-            expect(Template.leaderboard.players()).toBe(someLocalCollectionCursor);
-        });
-    });
-});
+## What other tests can I run?
+While we advocate that most developers start with integration testing, there are other types of tests that may be more suitable for your situation.
 
-```
+**Unit tests** run without the full environment, isolating code units such as functions and objects for testing. This requires you to mock any outside objects needed by the unit currently being tested. Velocity provides most of your  mocking automatically, but you will still need to do some of your own to make the tests work. In return for this investment, you get much faster tests; this is by far the fastest form of testing (order of magnitude?). It also encourages you to write modular, decoupled code. The [Jasmine framework](https://atmospherejs.com/?q=jasmine) currently supports unit testing.
 
-Since you are doing unit-testing, you need to mock out some of the calls being made inside the template. Jasmine works by grouping code into blocks, in this case we wrote a describe block and put the test inside of it. Each test is denoted by the it block of code. 
+**End-to-end tests** simulate manual testing by performing clicks, data entry, and other tasks that a user would perform and then verifying that the interface of the app responds correctly. They have the advantage of confirming that the entire process is working as a whole, whereas other tests may miss problems that occur during the interactions between components. End-to-end tests are also very intuitive to write. However, these tests can be more brittle (one ID change in a template may break multiple tests) and also may not tell you *where* an error occurred. They also tend to run slowly enough that it is impractical to run them every time you save your code. Selenium is the tool most used for end-to-end testing, and you can use that with the [Nightwatch framework](https://github.com/meteor-velocity/nightwatch-framework)
 
-The test starts off by setting up a blank javascript object as a stub for a cursor. Then we mock out the Players.find call and set up some expectations on the options being passed in, and finished up the mock by returning our stubbed cursor. Lastly, we set up an expectation that Template.leaderboard.players() should be equal to our stub cursor.
+There are other kinds of testing, such as performance tests, smoke tests, and other metrics such as code coverage. We will be adding resources that help you learn about your options as the project develops. Pull requests ([here](https://github.com/meteor-velocity/website)) are encouraged!
 
-The velocity magic kicks in when we put this test into the tests folder in the root of the app and we name is `leaderboard-jasmine-unit.js`. Velocity recognizes that the jasmine-unit.js ending is a Jasmine unit test and will send our test to the jasmine unit framework to be run. The jasmine-unit framework will then use the test mirror of the leaderboard app and execute it's test suite and return the results back to velocity for reporting. Now you have the magic of a reactive test suite!
+
+
+
+
+
+## Resources
+
+### Currently available testing frameworks 
+[Submit a pull request here](https://github.com/meteor-velocity/website) to add your framework to this website.
+
+
+
 {{/markdown}}
 </template>
