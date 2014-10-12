@@ -8,7 +8,5 @@ Router.map(function () {
     path: '/',
   });
   this.route('getting-started');
-  this.route('user-guide');
-  this.route('plugins');
   this.route('about');
 });
