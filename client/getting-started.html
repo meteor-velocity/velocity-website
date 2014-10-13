@@ -1,18 +1,64 @@
 <template name="getting-started">
 {{#markdown}}
 
-#Getting Started
+## Getting Started: Why Test?
 
-This guide will get you started started with Velocity in a few minutes. Here are a few ways to begin:
+Have you ever reached the point on an app where you were afraid to change something? The complexity reaches a point where the thought of changing that app inspires terror – there is just no way to be sure that the next change won't cascade through the app to create a totally unexpected bug! On the other hand, have you found that something that used to work is broken and have no idea how or when it broke? Checking the bug across various git commits works but is time-consuming. 
+
+Setting up a testing harness protects against these problems. You can change your code with impunity because you will know if you break something elsewhere in your app. And when you do break something, you will be notified right away, so you can deal with the problem while you still have all of your code "in your head."
+
+This guide will get you started started with Velocity in a few minutes. We recommend using Velocity with Meteor 0.9.4 or higher. 
 
 ## I want to add testing to my app
-If you are relatively new to testing or just want to keep things simple, we recommend beginning with an integration testing framework. **Integration testing** gives you access to the full application environment in a mirror process. The mirror can run without affecting your main live app, so it will not interfere with manual tests and anything else you need to do with your app while you develop. These tests are also fast enough to give you real-time feedback. Velocity currently has two packages that implement integration testing, and you can choose based on features or the syntax that you prefer.
+If you are relatively new to testing or just want to keep things simple, we recommend beginning with an integration testing framework. **Integration testing** gives you access to the full application environment in a mirror application. The mirror can run without affecting your main  app, so it will not interfere with manual tests, demos, or anything else you need to do with your app while you develop. Because the full environment is available, you can use all packages and Meteor API methods that you are used to, making this kind of testing quite intuitive. These tests are also fast enough to give you real-time feedback. Every time you save your code, all your tests will be re-run, and you will know whether your tests passed. This provides ideal conditions for [test-driven development](http://en.wikipedia.org/wiki/Test-driven_development).
+
+Velocity currently has two packages, Mocha and Jasmine, that implement integration testing in the client, and you can choose based on features or the syntax that you prefer. We currently do not recommend installing both Jasmine and Mocha at the same time.
 
 ### Adding Mocha
-https://atmospherejs.com/mike/mocha
+The [Mocha package](https://atmospherejs.com/mike/mocha) allows you to test with [Mocha](http://visionmedia.github.io/mocha/) syntax. It gives you integration testing on both the client and server.
+
+Mocha can be added from within your app's directory with
+
+    meteor add mike:mocha
+
+Start your app, and you will see a green dot in the upper-righthand corner of your app. If you click on it, it will expand to show the HTML reporter. There aren't currently any tests, and it will show you 0 of 0 passing. You will need to add them to your app's `tests/` directory. The easiest way to do this is to click the button marked 'Add mocha sample tests'. If you do this, you will see the app update, and in a few seconds you will have a couple of passing tests shown. You can check your app's `tests/` directory to see the structure of the test files (a `tests/` directory will be added if necessary). Mocha looks for tests in the `tests/mocha/` directory, and in this directory, `client` and `server` tests are placed into directories of the same name. For further information, see the [package readme](https://github.com/mad-eye/meteor-mocha-web/) and the core (non-Meteor-specific)  [Mocha webpage](http://visionmedia.github.io/mocha/)
+
 
 ### Adding Jasmine
-https://atmospherejs.com/?q=jasmine
+The [Jasmine package](https://atmospherejs.com/?q=jasmine) allows you to test with [Jasmine](http://jasmine.github.io/2.0/introduction.html) syntax. It gives you integration testing on the client and unit testing on the server.
+
+Jasmine can be added from within your app's directory with
+
+    meteor add sanjo:jasmine
+    meteor add velocity:html-reporter
+
+Start your app, and you will see a green dot in the upper-righthand corner of your app. If you click on it, it will expand to show the HTML reporter. There aren't currently any tests, and it will show you 0 of 0 passing. You will need to add them to your app's `tests/` directory. The Jasmine package installs as two frameworks, an integration testing framework for the client, and a unit testing framework for the server.
+
+To add either client or server sample tests, you can click the appropriate blue button on the right. If you do this, you will see the app update, and in a few seconds you will have a couple of passing tests shown. You can check your app's `tests/` directory to see the structure of the test files (a `tests/` directory will be added if necessary). Mocha looks for tests in the `tests/jasmine/` directory, and it further segregates between `client` and `server` folders. Inside those, `integration` and `unit` folders separate types of tests, although currently only unit tests are available on the server, and only integration tests are available on the client. For further information, see the [package readme](https://github.com/Sanjo/meteor-jasmine/) and the main (non-Meteor-specific) [Jasmine webpage](http://jasmine.github.io/2.0/introduction.html)
+
+##Testing packages with TinyTest and MUnit
+(COMING SOON) Jasmine and Mocha can only test your application code, not your smart packages. With the integration of MDG's TinyTest framework into Velocity though, you can now do integration tests on packages used by your main app. For a more full-featured package test environment, you can add the MUnit package on top of TinyTest. It adds test suites, Mocha syntax, and [Sinon](http://sinonjs.org/) mocks, stubs, and spies. TinyTest and MUnit can be used together with Jasmine or Mocha to test all the code in your app, regardless of whether it is in the main app or split into a separate package. Combine these with Nightwatch (read below) for a complete testing solution.
+
+## What other tests can I run?
+While we advocate that most developers start with integration testing, there are other types of tests that may be more suitable for your situation.
+
+**Unit tests** run without the full environment, isolating code units such as functions and objects for testing. This requires you to mock any outside objects needed by the unit currently being tested. For example, your code may call `Tracker.autorun()`, but the `Tracker` symbol will not be defined in a unit test - you must provide your own (possibly no-op) version of `Tracket.autorun()` for the test or your code will throw an error. Velocity provides most of your mocking automatically, but you will still need to do some of your own to make the tests work. In return for this investment, you get much faster tests. This is by far the fastest form of testing, perhaps by an order of magnitude. It also encourages you to write modular, decoupled code. The [Jasmine framework](https://atmospherejs.com/?q=jasmine) currently supports unit testing on the server.
+
+**End-to-end tests** (also called **UI tests**) simulate manual testing by performing clicks, data entry, and other tasks that a user would perform and then verifying that the interface of the app responds correctly, for example checking that a certain `<div>` contains the expected text. They have the advantage of confirming that the entire process is working as a whole, whereas other tests may miss problems that occur during the interactions between components. End-to-end tests are also very intuitive to write. However, these tests can be more brittle (one ID change in a template may break multiple tests) and also may not tell you *where* an error occurred. They also tend to run slowly enough that it is impractical to run them every time you save your code. [Selenium Webdriver](http://www.seleniumhq.org/projects/webdriver/) is the tool most used for end-to-end testing, and you can use that with the [Nightwatch framework](https://atmospherejs.com/clinical/nightwatch).
+
+You can install Nightwatch with
+
+    meteor add clinical:nightwatch
+
+There are other kinds of testing, such as performance tests, smoke tests, and metrics such as code coverage. We will be adding resources that help you learn about your options as the project develops. Pull requests ([here](https://github.com/meteor-velocity/website)) are encouraged!
+
+## Why are there so many kinds of tests?
+Developers new to testing may find the number of choices overwhelming. Let's try to put them in context. Testing at different levels solves different problems. You may be tempted just to do end-to-end tests, because they are easy to understand, but if an end-to-end test fails, how do you know where the failure occurred? Often one test may touch several different parts of your app. In addition, consider code paths. Each `if` statement, for example, creates two code paths, one for `true`, and one for `false`. The number of tests you could do based on code paths is nearly infinite for some end-to-end tests, whereas unit tests can test all code paths fairly easily if your functions are small. And because unit testing covers small code units, it is likely to tell you with far greater precision where a problem occurred. Integration test covers a middle ground for checking how groups of units work together. Because of this, testing is often depicted as a pyramid where the width of the pyramid indicates how many tests you have.
+
+
+[need graphic]
+
+
 
 ## I want to see an example
 You can see a working example of the Meteor Leaderboard example app with working tests by downloading the [velocity demo](https://github.com/meteor-velocity/velocity-example).
@@ -22,25 +68,21 @@ You can see a working example of the Meteor Leaderboard example app with working
     $ cd velocity-example
     $ meteor
 
-## What other tests can I run?
-While we advocate that most developers start with integration testing, there are other types of tests that may be more suitable for your situation.
-
-**Unit tests** run without the full environment, isolating code units such as functions and objects for testing. This requires you to mock any outside objects needed by the unit currently being tested. Velocity provides most of your  mocking automatically, but you will still need to do some of your own to make the tests work. In return for this investment, you get much faster tests; this is by far the fastest form of testing (order of magnitude?). It also encourages you to write modular, decoupled code. The [Jasmine framework](https://atmospherejs.com/?q=jasmine) currently supports unit testing.
-
-**End-to-end tests** simulate manual testing by performing clicks, data entry, and other tasks that a user would perform and then verifying that the interface of the app responds correctly. They have the advantage of confirming that the entire process is working as a whole, whereas other tests may miss problems that occur during the interactions between components. End-to-end tests are also very intuitive to write. However, these tests can be more brittle (one ID change in a template may break multiple tests) and also may not tell you *where* an error occurred. They also tend to run slowly enough that it is impractical to run them every time you save your code. Selenium is the tool most used for end-to-end testing, and you can use that with the [Nightwatch framework](https://github.com/meteor-velocity/nightwatch-framework)
-
-There are other kinds of testing, such as performance tests, smoke tests, and other metrics such as code coverage. We will be adding resources that help you learn about your options as the project develops. Pull requests ([here](https://github.com/meteor-velocity/website)) are encouraged!
-
-
-
-
-
 
 ## Resources
 
-### Currently available testing frameworks 
+### Velocity-compatible Testing frameworks 
 [Submit a pull request here](https://github.com/meteor-velocity/website) to add your framework to this website.
 
+### Velocity reporters
+
+* html reporter
+* CI/command-line reporter 
+
+### Books
+
+
+### Resources on the web
 
 
 {{/markdown}}
