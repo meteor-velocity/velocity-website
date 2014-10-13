@@ -7,4 +7,17 @@ Velocity came out of a joint online meeting focused on testing featuring Sam Hat
 
 ## The Team
 {{/markdown}}
+
+  {{#each contributors}}
+  <div class="media">
+    <a class="pull-left" href="{{url}}">
+      <img class="contributor-photo media-object img-circle" src="{{photo}}" alt="{{name}}">
+    </a>
+    <div class="media-body">
+      <h4 class="media-heading">{{name}}</h4>
+      {{bio}}
+    </div>
+  </div>
+  {{/each}}
+
 </template>
