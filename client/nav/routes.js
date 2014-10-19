@@ -8,5 +8,6 @@ Router.map(function () {
     path: '/',
   });
   this.route('getting-started');
+  this.route('resources');
   this.route('about');
 });
