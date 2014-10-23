@@ -1,29 +1,50 @@
-<template name="home">
-
-<div class="logo">
-    <div class='home-logo'>
-      <img  src="images/velocity_logo.svg" alt="Velocity">
-    </div>
-    
-    <h2>The official testing framework of Meteor 1.0</h2>
-</div>
-
-<p>
-  Meteor makes it easy to make modern web apps. Now Velocity makes it easy to test them, too. Your tests update reactively, just like your apps. And since it's the officially sanctioned testing framework for Meteor, you can use it with confidence.
-</p>
-<div class="row">
-    <div class="col-sm-12">
-
+<template name="frontExamples">
+  <div class="examples">
     <div class="center">
-          <h2>See Velocity in Action</h2>
-          <img src="http://placehold.it/600x450">
-
+      <h4>Get started now!</h4>
     </div>
 
+    <ul class="nav nav-tabs" role="tablist">
+      {{#each frameworks}}
+      <li><a href="#{{slug}}" role="tab" data-toggle="tab">{{name}}</a></li>
+      {{/each}}
+    </ul>
+
+    <div class="tab-content">
+      {{#each frameworks}}
+      <div class="tab-pane" id="{{slug}}">
+        <p>{{description}}</p>
+        <pre>{{example}}</pre>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</template>
+
+
+<template name="home">
+<div class="logo">
+  <div class='home-logo'>
+    <img  src="images/velocity_logo.svg" alt="Velocity">
+    <h2>The official testing framework of Meteor 1.0</h2>
   </div>
 </div>
 
+<div class="row">
+  <div class="col-sm-6">
+    <p>
+      Meteor makes it easy to make modern web apps. Now Velocity makes it easy to test them, too. Your tests update reactively, just like your apps. And since it's the officially sanctioned testing framework for Meteor, you can use it with confidence.
+    </p>
 
+    {{> frontExamples}}
+  </div>
+
+  <div class="col-sm-5">
+    <a href="/screencast"><img src="http://placehold.it/355x250"></a>
+  </div>
+</div>
+
+<hr />
 
 {{#markdown}}
 
@@ -42,4 +63,10 @@ Velocity accepts two kinds of plugin: test frameworks and reporters. Velocity wa
 Velocity is designed from the ground up to encourage the development of new plugins. Like Meteor itself, Velocity is modular and does not archtiectrually favor one plugin over another. Velocity comes with two reporters and provides a number of common services such as the creation of mirrors apps for isolation and instrumentation, running of setup code (fixtures), automatic stubbing for unit tests, and more. It's easy to develop new testing systems and reporters for Velocity. [Visit us on Github to learn more](https://github.com/meteor-velocity/velocity).
 
 {{/markdown}}
+
+<div class="center">
+  <br />
+  <h4>Next: <a href="/getting-started">Getting Started</a></h4>
+</div>
+
 </template>

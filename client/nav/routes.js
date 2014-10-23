@@ -10,4 +10,5 @@ Router.map(function () {
   this.route('getting-started');
   this.route('resources');
   this.route('about');
+  this.route('screencast');
 });
