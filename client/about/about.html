@@ -10,12 +10,19 @@ Velocity came out of a joint online meeting focused on testing featuring Sam Hat
 
   {{#each contributors}}
   <div class="media">
-    <a class="pull-left" href="{{url}}">
-      <img class="contributor-photo media-object img-circle" src="{{photo}}" alt="{{name}}">
-    </a>
+    {{#if photo}}
+      <a class="pull-left" href="{{url}}">
+        <img class="contributor-photo media-object img-circle" src="{{photo}}" alt="{{name}}">
+      </a>
+    {{/if}}
+
     <div class="media-body">
-      <h4 class="media-heading">{{name}}</h4>
-      {{bio}}
+      <h4 class="media-heading">{{name}}
+        {{#if github}}
+        <a class="repo" href="{{github}}"><img src="https://help.github.com/assets/images/site/invertocat.png" /></a>
+        {{/if}}
+      </h4>
+      {{{bio}}}
     </div>
   </div>
   {{/each}}
