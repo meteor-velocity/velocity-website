@@ -12,6 +12,13 @@ Template.about.helpers({
         photo: Gravatar.imageUrl("alanning@gmail.com"),
         url: "https://share911.com/",
         github: "https://github.com/alanning"
+      },
+      {
+        name: "Jonas Aschenbrenner",
+        bio: "Maintainer of sanjo:jasmine and velocity:core. Co-Founder of <a href='http://www.eventport.net/en/'>Eventport</a>. Enthusiastic Web Developer and Entrepreneur.",
+        photo: Gravatar.imageUrl("jonas.aschenbrenner@gmail.com"),
+        url: "http://sanjo-webdesign.de/",
+        github: "https://github.com/Sanjo"
       }
     ]
 });
