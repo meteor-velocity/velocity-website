@@ -22,7 +22,7 @@ Template.about.helpers({
       },
       {
         name: "Sam Hatoum",
-        bio: "Sam is an Agile consulting specializing in Continuous Delivery. He is the author of <a href='http://www.meteortesting.com'>The Meteor Testing Manual</a>, <a href='https://github.com/xolvio/meteor-cucumber'>meteor-cucumber</a>, <a href='https://github.com/xolvio/meteor-webdriver'>meteor-webdriver</a>, <a href='https://github.com/xolvio/meteor-coverage'>meteor-coverage</a> and the precursor to Velocity - <a href='http://rtd.xolv.io'>RTD</a>. Sam is also the founder of <a href='http://xolv.io'>Xolv.io</a> and a co-founder of <a href='http://placebuzz.com'>Placebuzz</a>".
+        bio: "Sam is an Agile consulting specializing in Continuous Delivery. He is the author of <a href='http://www.meteortesting.com'>The Meteor Testing Manual</a>, <a href='https://github.com/xolvio/meteor-cucumber'>meteor-cucumber</a>, <a href='https://github.com/xolvio/meteor-webdriver'>meteor-webdriver</a>, <a href='https://github.com/xolvio/meteor-coverage'>meteor-coverage</a> and the precursor to Velocity - <a href='http://rtd.xolv.io'>RTD</a>. Sam is also the founder of <a href='http://xolv.io'>Xolv.io</a> and a co-founder of <a href='http://placebuzz.com'>Placebuzz</a>",
         photo: Gravatar.imageUrl("sam@xolv.io"),
         url: "http://www.meteortesting.com/",
         github: "https://github.com/sam_hatoum"
