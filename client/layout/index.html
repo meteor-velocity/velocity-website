@@ -1,5 +1,7 @@
 <head>
-  <title>Velocity: The official testing framework for Meteor 1.0</title>
+  <title>Velocity: Testing Framework for Meteor</title>
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-touch-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-touch-icon-114x114.png">
   <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-touch-icon-72x72.png">
@@ -19,16 +21,22 @@
 </head>
 
 <template name="layout">
-  <div class="container">
-    <header>
-      {{> nav }}
-    </header>
-    <div class="main" role="main">
-      {{> yield}}
-    </div>
+  {{> nav }}
+  <div id="main" class="col-md-9" role="main">
+    {{> yield}}
+
+    <footer>
+      <a href="https://github.com/meteor-velocity/velocity"
+         title="View Source on Github"
+         class="badger" target="_blank">
+        <i class="fa fa-github"></i>
+      </a>
+      <a href="http://www.meteor.com/"
+         title="Official Meteor Project"
+         class="badger meteor" target="_blank">
+      </a>
+      <p><i class="fa fa-copyright"></i> 2014 Velocity Test Framework, ??? License</p>
+    </footer>
   </div>
 
-  <footer>
-    &nbsp;
-  </footer>
 </template>

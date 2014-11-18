@@ -7,6 +7,11 @@ standard-app-packages
 autopublish
 insecure
 showdown
-iron:router
 mizzao:bootstrap-3
 jparker:gravatar
+markdown
+less
+chrismbeckett:fontawesome4
+iron:router@1.0.0-rc.0
+coffeescript
+
