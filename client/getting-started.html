@@ -78,10 +78,7 @@ There are other kinds of testing, such as performance tests, smoke tests, and me
 ## Why are there so many kinds of tests?
 Developers new to testing may find the number of choices overwhelming. Let's try to put them in context. Testing at different levels solves different problems. You may be tempted just to do end-to-end tests, because they are easy to understand, but if an end-to-end test fails, how do you know where the failure occurred? Often one test may touch several different parts of your app. In addition, consider code paths. Each `if` statement, for example, creates two code paths, one for `true`, and one for `false`. The number of tests you could do based on code paths is nearly infinite for some end-to-end tests, whereas unit tests can test all code paths fairly easily if your functions are small. And because unit testing covers small code units, it is likely to tell you with far greater precision where a problem occurred. Integration test covers a middle ground for checking how groups of units work together. Because of this, testing is often depicted as a pyramid where the width of the pyramid indicates how many tests you have.
 
-
-[need graphic]
-
-
+![test pryamid](testPyramid.jpeg)
 
 {{/markdown}}
 
