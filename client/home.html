@@ -1,4 +1,4 @@
-<template name="frontExamples">
+<template name="getStarted">
   <div class="examples">
     <h3>Get started now!</h3>
 
@@ -19,15 +19,34 @@
   </div>
 </template>
 
+<template name="howItWorks">
+  <div class="row">
+    <div class="col col-xs-12">
+      <img src="/images/passing_tests.png">
+      <p class="caption">
+        Your app tests are passing
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col col-xs-12">
+      <img src="/images/failing_tests.png">
+      <p class="caption">
+        Your app tests are failing
+      </p>
+    </div>
+  </div>
+</template>
+
 
 <template name="home">
 <div class="home-logo">
-  <a href="https://github.com/meteor-velocity/velocity" 
+  <a href="https://github.com/meteor-velocity/velocity"
      title="View Source on Github"
      class="badger" target="_blank">
     <i class="fa fa-github"></i>
   </a>
-  <a href="http://www.meteor.com/" 
+  <a href="http://www.meteor.com/"
      title="Official Meteor Project"
      class="badger meteor" target="_blank">
   </a>
@@ -35,17 +54,24 @@
   <h1>Test Framework for Meteor</h1>
 </div>
 
-<div class="row">
-  <div class="col-sm-7">
+<div class="row hflush">
+  <div class="intro col-sm-7">
     <p>
       Meteor makes it easy to make modern web apps. Now Velocity makes it easy to test them, too. Your tests update reactively, just like your apps. And since it's the officially sanctioned testing framework for Meteor, you can use it with confidence.
     </p>
-
-    {{> frontExamples}}
   </div>
-
   <div class="col-sm-5">
-    <a href="/screencast"><img src="http://placehold.it/355x250"></a>
+    <img class="screenshot1" src="/images/passing.png">
+      <!-- <img class="screenshot2" src="/images/velocity2.png"> -->
+    <!-- <div class="screenshot-container">
+    </div> -->
+
+  </div>
+</div>
+
+<div class="row hflush">
+  <div class="col-sm-12">
+  {{> getStarted}}
   </div>
 </div>
 
@@ -60,7 +86,16 @@
 * Run Velocity without fear of polluting your production app. Test packages can be flagged as `debugOnly`. The Isopackage build system will automatically exclude test packages from production builds, allowing you to enjoy powerful integrated testing in your development environment without fear of affecting the production build.
 
 ## How Velocity Works
-Velocity accepts two kinds of plugin: test frameworks and reporters. Velocity watches your `tests/` directory and sends test files to the correct framework. The testing framework performs the tests and sends results for each test back to Velocity as they complete. Velocity then combines the results from all of the testing frameworks and outputs them via one or more reporters. When the app or tests change, Velocity will rerun your tests and reactively update the results. Reporters can output the results in your app in an overlay, via structured data (e.g., JSON) for continuous integration, or other formats.
+{{> howItWorks}}
+
+Velocity accepts two kinds of plugin: test frameworks and reporters. Velocity
+watches your `tests/` directory and sends test files to the correct framework.
+The testing framework performs the tests and sends results for each test back to
+Velocity as they complete. Velocity then combines the results from all of the
+testing frameworks and outputs them via one or more reporters. When the app or
+tests change, Velocity will rerun your tests and reactively update the results.
+Reporters can output the results in your app in an overlay, via structured data
+(e.g., JSON) for continuous integration, or other formats.
 
 ## Velocity is a community
 Velocity is designed from the ground up to encourage the development of new plugins. Like Meteor itself, Velocity is modular and does not architectrually favor one plugin over another. Velocity comes with two reporters and provides a number of common services such as the creation of mirrors apps for isolation and instrumentation, running of setup code (fixtures), automatic stubbing for unit tests, and more. It's easy to develop new testing systems and reporters for Velocity. [Visit us on Github to learn more](https://github.com/meteor-velocity/velocity).

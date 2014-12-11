@@ -1,9 +1,9 @@
-Template.frontExamples.rendered = function () {
+Template.getStarted.rendered = function () {
   $('.tab-pane:first').addClass('active')
   $('.nav-tabs li:first').addClass('active')
 }
 
-Template.frontExamples.helpers({
+Template.getStarted.helpers({
   frameworks: function () {
     return [
       {
