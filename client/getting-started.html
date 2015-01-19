@@ -9,17 +9,19 @@ Have you ever reached the point on an app where you were afraid to change someth
 
 Setting up a testing harness protects against these problems. You can change your code with impunity because you will know right away if you break something elsewhere in your app. Then you can deal with the problem while you still have all of your code "in your head."
 
-This guide will get you started started with Velocity in a few minutes. We recommend using Velocity with Meteor 0.9.4 or higher. 
+This guide will get you started started with Velocity in a few minutes. We recommend using Velocity with Meteor 0.9.4 or higher.
 
 If you are relatively new to testing or just want to keep things simple, we recommend beginning with an integration testing framework. **Integration testing** gives you access to the full application environment in a mirror application. The mirror can run without affecting your main  app, so it will not interfere with manual tests, demos, or anything else you need to do with your app while you develop. Because the full environment is available, you can use all packages and Meteor API methods that you are used to, making this kind of testing quite intuitive. These tests are also fast enough to give you real-time feedback. Every time you save your code, all your tests will be re-run, and you will know whether your tests passed. This provides ideal conditions for [test-driven development](http://en.wikipedia.org/wiki/Test-driven_development).
 
 ### See an example
 You can see a working example of the Meteor Leaderboard example app with working tests by downloading the [velocity demo](https://github.com/meteor-velocity/velocity-example).
 
+There are multiple example implementations included in the velocity-example repo.
+
 ```bash
 # clone the velocity-example repo and run meteor
 $ git clone https://github.com/meteor-velocity/velocity-example.git
-$ cd velocity-example
+$ cd velocity-example/leaderboard-cucumber
 $ meteor
 ```
 
