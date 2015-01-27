@@ -20,10 +20,10 @@ Template.getStarted.helpers({
                  "meteor add velocity:html-reporter"
       },
       {
-        name: "Selenium Nightwatch",
+        name: "Nightwatch",
         slug: "nightwatch",
         description: "Acceptance testing via browser automation",
-        example: "meteor add clinical:nightwatch"
+        example: "meteor add velocity:nightwatch-framework"
       }
     ];
   }

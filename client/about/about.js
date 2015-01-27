@@ -27,6 +27,13 @@ Template.about.helpers({
         photo: Gravatar.imageUrl("alanning@gmail.com"),
         url: "https://share911.com/",
         github: "https://github.com/alanning"
+      },
+      {
+        name: "Abigail Watson",
+        bio: "Abigail was an eary adopter of Meteor after a decade of doing QA work for healthcare IT projects.  She's interested in FDA and CCHIT certification for Meteor applications, and coordinages the Clinical Meteor project.",
+        photo: Gravatar.imageUrl("awatson1978@gmail.com"),
+        url: "https://clinical.meteor.com/",
+        github: "https://github.com/awatson1978"
       }
     ]
 });
