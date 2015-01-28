@@ -9,7 +9,7 @@ Have you ever reached the point on an app where you were afraid to change someth
 
 Setting up a testing harness protects against these problems. You can change your code with impunity because you will know right away if you break something elsewhere in your app. Then you can deal with the problem while you still have all of your code "in your head."
 
-This guide will get you started started with Velocity in a few minutes. We recommend using Velocity with Meteor 0.9.4 or higher.
+This guide will get you started started with Velocity in a few minutes. We recommend using Velocity with Meteor 1.0 or higher.
 
 If you are relatively new to testing or just want to keep things simple, we recommend beginning with an integration testing framework. **Integration testing** gives you access to the full application environment in a mirror application. The mirror can run without affecting your main  app, so it will not interfere with manual tests, demos, or anything else you need to do with your app while you develop. Because the full environment is available, you can use all packages and Meteor API methods that you are used to, making this kind of testing quite intuitive. These tests are also fast enough to give you real-time feedback. Every time you save your code, all your tests will be re-run, and you will know whether your tests passed. This provides ideal conditions for [test-driven development](http://en.wikipedia.org/wiki/Test-driven_development).
 
@@ -51,6 +51,16 @@ Jasmine can be added from within your app's directory with
 Start your app, and you will see a green dot in the upper-righthand corner of your app. If you click on it, it will expand to show the HTML reporter. There aren't currently any tests, and it will show you 0 of 0 passing. You will need to add them to your app's `tests/` directory. The Jasmine package installs as two frameworks, an integration testing framework for the client, and a unit testing framework for the server.
 
 To add either client or server sample tests, you can click the appropriate blue button on the right. If you do this, you will see the app update, and in a few seconds you will have a couple of passing tests shown. You can check your app's `tests/` directory to see the structure of the test files (a `tests/` directory will be added if necessary). Mocha looks for tests in the `tests/jasmine/` directory, and it further segregates between `client` and `server` folders. Inside those, `integration` and `unit` folders separate types of tests, although currently only unit tests are available on the server, and only integration tests are available on the client. For further information, see the [package readme](https://github.com/Sanjo/meteor-jasmine/) and the main (non-Meteor-specific) [Jasmine webpage](http://jasmine.github.io/2.0/introduction.html)
+
+### Nightwatch
+The [Nightwatch Framework](https://github.com/meteor-velocity/nightwatch-framework) allows you to run automated browser acceptance test with [Nightwatch.js](http://nightwatchjs.org/), a Javascript bridge to the industry standard [Selenium](http://www.seleniumhq.org/) server.  It gives you a way to simulate user interactions (and therefore business requirements) by automating the browser itself.
+
+Nightwatch can be added from within your app's directory with
+
+    meteor add velocity:nightwatch-framework
+    meteor add velocity:html-reporter
+
+Nightwatch tests are a bit different than Mocha and Jasmine tests, in that they are _acceptance_ tests, rather than _unit_ or _integration_ tests.  They are also much more expensive to run, since an entire separate web browser has to be launched.  They are slower to run, as well, since they simulate the actions that an actual user would make.  As such, we don't run Nightwatch acceptance tests automatically each time a file is saved.  Rather, we want to run acceptance tests when we upload a commit to GitHub or generate a pull-request.  It's recommended that you open a terminal and watch the tests run from there, as there will be a significant delay between when you click the 'Run Nightwatch Tests' button and when the tests show up in the reporter.  
 
 ### Testing packages with TinyTest and MUnit
 *(COMING SOON)* The Jasmine and Mocha packages can only test your application code, not your smart packages. With the integration of MDG's TinyTest framework into Velocity though, you can now do integration tests on packages used by your main app. For a more full-featured package test environment, you can add the MUnit package on top of TinyTest. It adds test suites, Mocha syntax, and [Sinon](http://sinonjs.org/) mocks, stubs, and spies. TinyTest and MUnit can be used together with Jasmine or Mocha to test all the code in your app, regardless of whether it is in the main app or split into a separate package. Combine these with Nightwatch (read below) for a complete testing solution.
