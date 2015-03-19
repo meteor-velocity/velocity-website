@@ -21,7 +21,8 @@ Template.getStarted.helpers({
         description: "Integration and unit testing with jasmine syntax.",
         install: [
           "$ meteor add sanjo:jasmine",
-          "$ meteor add velocity:html-reporter"
+          "$ meteor add velocity:html-reporter",
+          "$ meteor"
         ]
       },
       {
@@ -29,7 +30,17 @@ Template.getStarted.helpers({
         slug: "nightwatch",
         description: "Acceptance testing via browser automation",
         install: [
-          "$ meteor add velocity:nightwatch-framework"
+          "$ meteor add velocity:nightwatch-framework",
+          "$ meteor"
+        ]
+      },
+      {
+        name: "Cucumber",
+        slug: "cucumber",
+        description: "Gherkin sytax testing for Meteor using Cucumber.js",
+        install: [
+          "$ meteor add xolvio:cucumber",
+          "$ meteor"
         ]
       }
     ];

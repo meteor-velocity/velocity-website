@@ -14,14 +14,14 @@ This guide will get you started started with Velocity in a few minutes. We recom
 If you are relatively new to testing or just want to keep things simple, we recommend beginning with an integration testing framework. **Integration testing** gives you access to the full application environment in a mirror application. The mirror can run without affecting your main  app, so it will not interfere with manual tests, demos, or anything else you need to do with your app while you develop. Because the full environment is available, you can use all packages and Meteor API methods that you are used to, making this kind of testing quite intuitive. These tests are also fast enough to give you real-time feedback. Every time you save your code, all your tests will be re-run, and you will know whether your tests passed. This provides ideal conditions for [test-driven development](http://en.wikipedia.org/wiki/Test-driven_development).
 
 ### See an example
-You can see a working example of the Meteor Leaderboard example app with working tests by downloading the [velocity demo](https://github.com/meteor-velocity/velocity-example).
+You can see a working example of the Meteor Leaderboard example app with working tests by downloading the [velocity demo](https://github.com/meteor-velocity/velocity-examples).
 
-There are multiple example implementations included in the velocity-example repo.
+There are multiple example implementations included in the velocity-examples repo.
 
 ```bash
-# clone the velocity-example repo and run meteor
-$ git clone https://github.com/meteor-velocity/velocity-example.git
-$ cd velocity-example/leaderboard-cucumber
+# clone the velocity-examples repo and run meteor
+$ git clone https://github.com/meteor-velocity/velocity-examples.git
+$ cd velocity-examples/leaderboard-cucumber
 $ meteor
 ```
 
@@ -62,6 +62,25 @@ Nightwatch can be added from within your app's directory with
 
 Nightwatch tests are a bit different than Mocha and Jasmine tests, in that they are _acceptance_ tests, rather than _unit_ or _integration_ tests.  They are also much more expensive to run, since an entire separate web browser has to be launched.  They are slower to run, as well, since they simulate the actions that an actual user would make.  As such, we don't run Nightwatch acceptance tests automatically each time a file is saved.  Rather, we want to run acceptance tests when we upload a commit to GitHub or generate a pull-request.  It's recommended that you open a terminal and watch the tests run from there, as there will be a significant delay between when you click the 'Run Nightwatch Tests' button and when the tests show up in the reporter.  
 
+
+### Cucumber
+The [Cucumber package](https://atmospherejs.com/xolvio/cucumber) allows you to test your application by writing acceptance tests in the Gherkin syntax. Cucumber tests automate your web browser so you are testing your application exactly as a user would.
+
+Cucumber can be added from within your app's directory with:
+
+    $ meteor add xolvio:cucumber
+
+
+Here are some further resources on testing Meteor applications with Cucumber:
+
+* [Short video demoing with cucumber](https://www.youtube.com/watch?v=83dBtU6qy6c)
+* [Cucumber package readme](https://github.com/xolvio/meteor-cucumber)
+* [Intro slides on testing and cucumber](http://slides.com/alanning55/testing-meteor-applications)
+* [velocity-examples cucumber example](https://github.com/meteor-velocity/velocity-examples/tree/master/leaderboard-cucumber)
+* [Letterpress example](https://github.com/xolvio/Letterpress)
+
+
+
 ### Testing packages with TinyTest and MUnit
 *(COMING SOON)* The Jasmine and Mocha packages can only test your application code, not your smart packages. With the integration of MDG's TinyTest framework into Velocity though, you can now do integration tests on packages used by your main app. For a more full-featured package test environment, you can add the MUnit package on top of TinyTest. It adds test suites, Mocha syntax, and [Sinon](http://sinonjs.org/) mocks, stubs, and spies. TinyTest and MUnit can be used together with Jasmine or Mocha to test all the code in your app, regardless of whether it is in the main app or split into a separate package. Combine these with Nightwatch (read below) for a complete testing solution.
 
@@ -79,11 +98,7 @@ While we advocate that most developers start with integration testing, there are
 
 **Unit tests** run without the full environment, isolating code units such as functions and objects for testing. This requires you to mock any outside objects needed by the unit currently being tested. For example, your code may call `Tracker.autorun()`, but the `Tracker` symbol will not be defined in a unit test - you must provide your own (possibly no-op) version of `Tracker.autorun()` for the test or your code will throw an error. Velocity provides most of your mocking automatically, but you will still need to do some of your own to make the tests work. In return for this investment, you get much faster tests. This is by far the fastest form of testing, perhaps by an order of magnitude. It also encourages you to write modular, decoupled code. The [Jasmine framework](https://atmospherejs.com/?q=jasmine) currently supports unit testing on the server.
 
-**End-to-end tests** (also called **UI tests**) simulate manual testing by performing clicks, data entry, and other tasks that a user would perform and then verifying that the interface of the app responds correctly, for example checking that a certain `<div>` contains the expected text. They have the advantage of confirming that the entire process is working as a whole, whereas other tests may miss problems caused by the interactions between components. End-to-end tests are also very intuitive to write. However, these tests can be more brittle (one ID change in a template may break multiple tests) and also may not tell you *where* an error occurred. They also tend to run slowly enough that it is impractical to run them every time you save your code. [Selenium Webdriver](http://www.seleniumhq.org/projects/webdriver/) is the tool most used for end-to-end testing, and you can use that with the [Nightwatch framework](https://atmospherejs.com/clinical/nightwatch).
-
-You can install Nightwatch with
-
-    meteor add clinical:nightwatch
+**End-to-end tests** (also called **UI tests**) simulate manual testing by performing clicks, data entry, and other tasks that a user would perform and then verifying that the interface of the app responds correctly, for example checking that a certain `<div>` contains the expected text. They have the advantage of confirming that the entire process is working as a whole, whereas other tests may miss problems caused by the interactions between components. End-to-end tests are also very intuitive to write. However, these tests can be more brittle (one ID change in a template may break multiple tests) and also may not tell you *where* an error occurred. They also tend to run slowly enough that it is impractical to run them every time you save your code. [Selenium Webdriver](http://www.seleniumhq.org/projects/webdriver/) is the tool most used for end-to-end testing, and is used by both the [Nightwatch](/getting-started#nightwatch) and [Cucumber](/getting-started#cucumber) test frameworks.
 
 There are other kinds of testing, such as performance tests, smoke tests, and metrics such as code coverage. We will be adding resources that help you learn about your options as the Velocity project develops.  [Pull requests](https://github.com/meteor-velocity/website) are encouraged!
 
