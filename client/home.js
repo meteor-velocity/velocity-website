@@ -10,20 +10,38 @@ Template.getStarted.helpers({
         name: "Mocha",
         slug: "mocha",
         description: "Integration testing with mocha syntax.",
-        example: "meteor add mike:mocha"
+        install: [
+          "$ meteor add mike:mocha",
+          "$ meteor"
+        ]
       },
       {
         name: "Jasmine",
         slug: "jasmine",
         description: "Integration and unit testing with jasmine syntax.",
-        example: "meteor add sanjo:jasmine\n" +
-                 "meteor add velocity:html-reporter"
+        install: [
+          "$ meteor add sanjo:jasmine",
+          "$ meteor add velocity:html-reporter",
+          "$ meteor"
+        ]
       },
       {
         name: "Nightwatch",
         slug: "nightwatch",
         description: "Acceptance testing via browser automation",
-        example: "meteor add velocity:nightwatch-framework"
+        install: [
+          "$ meteor add velocity:nightwatch-framework",
+          "$ meteor"
+        ]
+      },
+      {
+        name: "Cucumber",
+        slug: "cucumber",
+        description: "Gherkin sytax testing for Meteor using Cucumber.js",
+        install: [
+          "$ meteor add xolvio:cucumber",
+          "$ meteor"
+        ]
       }
     ];
   }
