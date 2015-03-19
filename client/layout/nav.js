@@ -47,12 +47,6 @@ var navItems = [
       },
       {
         route: 'getting-started',
-        hash: 'testingpackageswithtinytestandmunit',
-        title: 'TinyTest',
-        class: 'indent'
-      },
-      {
-        route: 'getting-started',
         hash: 'reporters',
         title: 'Reporters',
         class: 'separators'
