@@ -12,7 +12,17 @@
       {{#each frameworks}}
       <div class="tab-pane" id="{{slug}}">
         <p>{{description}}</p>
-        <pre>{{example}}</pre>
+        <div class="section">
+          <h3>How to add {{name}} to your Meteor application:</h3>
+          <pre>$ cd &lt;your app directory&gt;</pre>
+          {{#each install}}
+            <pre>{{.}}</pre>
+          {{/each}}
+        </div>
+
+        <div class="section">
+          <h3><a href="/getting-started#{{slug}}">Learn more about {{name}}</a></h3>
+        </div>
       </div>
       {{/each}}
     </div>
