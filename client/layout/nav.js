@@ -47,6 +47,12 @@ var navItems = [
       },
       {
         route: 'getting-started',
+        hash: 'robotframework',
+        title: 'Robot Framework',
+        class: 'indent'
+      },
+      {
+        route: 'getting-started',
         hash: 'reporters',
         title: 'Reporters',
         class: 'separators'
