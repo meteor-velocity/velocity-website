@@ -42,7 +42,17 @@ Template.getStarted.helpers({
           "$ meteor add xolvio:cucumber",
           "$ meteor"
         ]
+      },
+      {
+        name: "Robot Framework",
+        slug: "robotframework",
+        description: "Acceptance testing using Robot Framework",
+        install: [
+          "$ meteor add rsbatech:robotframework",
+          "$ meteor"
+        ]
       }
+
     ];
   }
 });

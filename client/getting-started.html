@@ -80,6 +80,29 @@ Here are some further resources on testing Meteor applications with Cucumber:
 * [Letterpress example](https://github.com/xolvio/Letterpress)
 
 
+### RobotFramework
+The [Robot Framework](https://atmospherejs.com/rsbatech/robotframework) package allows you to automatically run end-to-end acceptance tests against your Meteor application with the Python-based [Robot Framework](http://robotframework.org), and report test results to Velocity - suported test reporters as well as Robot Framework's own HTML - based reports.
+
+Robot Framework tests are keyword - driven text or HTML files, supporting different scripting styles including Gherkin Given / When / Then syntax.  Using Robot Framework also gives you immediate access to many [built-in](http://robotframework.org/#libraries-standard) and [3rd party](http://robotframework.org/#libraries-external) test libraries for extending test coverage to other technologies, databases, remote systems etc.  This makes Robot Framework a great choice if your Meteor application is part of a wider infrastructure.
+
+Before using this Meteor package, you must install Python, Robot Framework and the [Selenium2Library](https://github.com/rtomac/robotframework-selenium2library) test library yourself on your target system ... follow the full [installation instructions here](https://github.com/robotframework/robotframework/blob/master/INSTALL.rst). If you already have Python 2.5, 2.6 or 2.7 available and the Pip installer, then simply execute:
+
+    $ sudo pip install robotframework-selenium2library
+
+Then install the Robot Framework Meteor package:
+
+    $ meteor add rsbatech:robotframework
+
+This package will also install copies of the PhantomJs and ChromeDriver NPM packages ready for use with the Selenium2Library Robot Framework library that you have pre-installed.
+
+Here are some further resources on testing Meteor applications with Robot Framework:
+
+* [Short video on installation and basic usage](http://youtu.be/90dX3QD7dYo)
+* [Robot Framework package README](https://github.com/rjsmith/meteor-robotframework)
+* [Velocity examples for Robot Framework](https://github.com/meteor-velocity/velocity-examples/tree/master/leaderboard-robotframework)
+
+
+
 ## Reporters
 
 ### HTML Reporter
