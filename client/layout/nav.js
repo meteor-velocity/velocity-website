@@ -35,12 +35,6 @@ var navItems = [
       },
       {
         route: 'getting-started',
-        hash: 'nightwatch',
-        title: 'Nightwatch',
-        class: 'indent'
-      },
-      {
-        route: 'getting-started',
         hash: 'cucumber',
         title: 'Cucumber',
         class: 'indent'
@@ -77,13 +71,18 @@ var navItems = [
     ]
   },
   {
+    route: 'blogList',
+    title: 'Blog',
+    icon: 'pencil'
+  },
+  {
     route: 'resources',
     title: 'Resources',
     icon: 'graduation-cap'
   },
   {
     route: 'about',
-    title: 'About',
+    title: 'History & Team',
     icon: 'users'
   }
 ];

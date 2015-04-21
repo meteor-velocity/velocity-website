@@ -26,15 +26,6 @@ Template.getStarted.helpers({
         ]
       },
       {
-        name: "Nightwatch",
-        slug: "nightwatch",
-        description: "Acceptance testing via browser automation",
-        install: [
-          "$ meteor add velocity:nightwatch-framework",
-          "$ meteor"
-        ]
-      },
-      {
         name: "Cucumber",
         slug: "cucumber",
         description: "Gherkin sytax testing for Meteor using Cucumber.js",
