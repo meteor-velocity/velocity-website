@@ -4,8 +4,7 @@
 # but you can also edit it by hand.
 
 standard-app-packages
-autopublish
-insecure
+http
 showdown
 mizzao:bootstrap-3
 jparker:gravatar
@@ -14,4 +13,12 @@ less
 chrismbeckett:fontawesome4
 iron:router@1.0.0-rc.0
 coffeescript
+underscore
 
+xolvio:md-blog
+spiderable
+percolatestudio:segment.io
+accounts-github
+accounts-ui
+alanning:roles
+service-configuration
