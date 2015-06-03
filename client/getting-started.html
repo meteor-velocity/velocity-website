@@ -1,7 +1,18 @@
 <template name="gettingStarted">
-{{#markdown}}
 
-# Getting Started
+  {{#markdown}}# Getting Started{{/markdown}}
+
+  {{#markdown}}## Installation (1){{/markdown}}
+  {{!-- A section with default content--}}
+  {{> section name="gettingStarted__installation"}}
+
+  {{#markdown}}## Testing your app{{/markdown}}
+  {{!-- A section with default content--}}
+  {{#section name="gettingStarted__testingYourApp"}}
+    Run your app, open the reporter, and click to add sample tests.
+  {{/section}}
+
+  {{#markdown}}
 
 ## Why Test?
 
