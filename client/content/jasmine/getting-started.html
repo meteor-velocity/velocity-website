@@ -1,5 +1,5 @@
 <template name="gettingStarted__installation__jasmine">
-  {{#markdown}}
+{{#markdown}}
 ```bash
 meteor add sanjo:jasmine
 ```
@@ -10,5 +10,44 @@ to see the test results.
 ```bash
 meteor add velocity:html-reporter
 ```
-  {{/markdown}}
+{{/markdown}}
+</template>
+
+<template name="gettingStarted__package__jasmine">
+{{#markdown}}
+## Package Testing
+
+Modify your package.js file to include sanjo:jasmine in the Package.onTest section like so:
+
+```javascript
+Package.onTest(function(api) {
+  api.use('sanjo:jasmine@0.14.0');
+  api.use('package-to-test');
+  api.addFiles('tests/server/example-spec.js', 'server');
+  api.addFiles('tests/client/example-spec.js', 'client');
+});
+```
+
+You can find a full example package [here](https://github.com/Sanjo/meteor-jasmine/tree/master/test-app/packages/package-to-test).
+
+You can run the tests for this package with:
+
+```bash
+VELOCITY_TEST_PACKAGES=1 meteor test-packages --driver-package velocity:html-reporter package-to-test
+```
+
+For CI you just need to add the `--velocity` flag:
+
+```bash
+VELOCITY_TEST_PACKAGES=1 meteor test-packages --driver-package velocity:html-reporter --velocity package-to-test
+```
+
+If your package is not located in an app you can test it with:
+
+```bash
+VELOCITY_TEST_PACKAGES=1 meteor test-packages --driver-package velocity:html-reporter --velocity ./
+```
+
+You can find a list of all available command options [here](https://github.com/meteor/meteor/blob/120febbf8a40f262e436d907ff36e469a19d7698/tools/commands.js#L1295-L1339).
+{{/markdown}}
 </template>
