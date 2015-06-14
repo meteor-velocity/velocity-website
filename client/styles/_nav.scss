@@ -1,0 +1,33 @@
+// Generic
+.nav-list {
+
+}
+
+.nav-list__item {
+  @include display(inline-block);
+}
+
+.nav-list__item > a {
+  color: $primary;
+  
+}
+
+// Header nav
+.site-header {
+
+}
+
+// Wide framework nav
+.framework-nav {
+  background: $grey;
+  @include pad($base-spacing);
+
+  .nav-list {
+    text-align: center;
+  }
+}
+
+.framework-nav__wrap {
+  
+}
+

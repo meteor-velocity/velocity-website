@@ -6,10 +6,8 @@
 standard-app-packages
 http
 showdown
-mizzao:bootstrap-3
 jparker:gravatar
 markdown
-less
 chrismbeckett:fontawesome4
 iron:router@1.0.0-rc.0
 coffeescript
@@ -22,3 +20,4 @@ accounts-github
 accounts-ui
 alanning:roles
 service-configuration
+fourseven:scss

@@ -1,0 +1,68 @@
+$lightgreen: #84DEA7;
+$darkgreen: #21424B;
+$purple: #613AAD;
+$grey: #E7E7EC;
+
+$primary: $darkgreen;
+$secondary: $lightgreen;
+$happy: #74F2A7;
+$sad: #FF715D;
+
+$base-background-color: #f9f9f9;
+$base-font-color: $primary;
+$header-font-color: $base-font-color;
+$base-border-color: $base-font-color;
+$base-hover-color: #000;
+
+$base-font-size: 1em;
+$h1-font-size: em(26);
+$h2-font-size: em(20);
+$h3-font-size: em(16);
+$h4-font-size: em(16);
+$h5-font-size: 1em;
+$h6-font-size: 1em;
+
+$base-line-height: 24px;
+$header-line-height: 24px;
+
+$base-border: 2px solid $base-border-color;
+
+$base-spacing: 1em;
+
+$base-link-color: $purple;
+$hover-link-color: darken($header-font-color, 5%);
+
+$base-font-family: 'Roboto', Georgia, serif;
+$header-font-family: 'Roboto', Georgia, serif;
+
+$border-radius: 3px;
+
+$base-button-color: $primary;
+$base-button-background: $base-background-color;
+$hover-button-color: darken($base-button-background, 5%);
+
+$form-input-background-color: darken($base-background-color, 5%);
+$form-input-background-color-hover: darken($form-input-background-color, 10%);
+$form-input-background-color-focus: darken($form-input-background-color, 10%);
+
+$form-input-border-color: $form-input-background-color;
+$form-input-border-color-hover: $form-input-background-color-hover;
+$form-input-border-color-focus: $form-input-background-color;
+
+$form-input-font-color: $header-font-color;
+$form-font-size: 1em;
+$form-font-family: $base-font-family;
+$form-font-weight: bold;
+$form-field-spacing: $base-line-height;
+
+@mixin primaryGradient {
+  @include linear-gradient(-180deg, $primary 0%, lighten($primary, 25%) 100%);
+}
+
+@mixin happyGradient {
+  @include linear-gradient(-180deg, $lightgreen 0%, #80EBE6 100%);
+}
+
+@mixin sadGradient {
+  @include linear-gradient(-180deg, $sad 0%, lighten($sad, 5%) 100%);
+}
