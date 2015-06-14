@@ -56,13 +56,5 @@ $form-font-weight: bold;
 $form-field-spacing: $base-line-height;
 
 @mixin primaryGradient {
-  @include linear-gradient(-180deg, $primary 0%, lighten($primary, 25%) 100%);
-}
-
-@mixin happyGradient {
   @include linear-gradient(-180deg, $lightgreen 0%, #80EBE6 100%);
-}
-
-@mixin sadGradient {
-  @include linear-gradient(-180deg, $sad 0%, lighten($sad, 5%) 100%);
 }

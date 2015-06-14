@@ -39,25 +39,10 @@
 
 .btn--primary {
   @extend .btn;
-  @include gradientHappy;
+  @include primaryGradient;
   
   &:hover {
     background: darken($primary, 10%);
-  }
-}
-
-.btn--happy {
-  @extend .btn;
-  @extend %btn--light;
-  @include happyGradient;
-  border: 1px solid $happy;
-  &:hover {
-    background: darken($happy, 10%);
-  }
-
-  &.hollow {
-    background: none;
-    color: $happy;
   }
 }
 
