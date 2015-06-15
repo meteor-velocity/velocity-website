@@ -7,7 +7,7 @@
       <section class="home-intro">
         <div class="home-intro__blurb">
           <p>Velocity helps you test Meteor apps using any framework you like</p>
-          <a href="" class="btn btn--primary btn--logo">Start</a>
+          <a href="" class="btn btn--primary btn__icon">Start</a>
         </div>
 
         <div class="home-intro__quickstart">
@@ -16,7 +16,9 @@
 
             <ul class="numbered">
               <li>Add velocity to your application</li>
-              <code>meteor add xolvio:velocity</code>
+              <pre>
+                 <code>meteor add xolvio:velocity</code>
+              </pre>
               <li>Pour yourself a coffee</li>
               <li>Go read the <a href="" class="btn--text">Guides</a></li>
             </ul>
@@ -34,5 +36,16 @@
   <!-- Framework Nav -->
   {{> frameworkNav }}
 
+  <!-- Alert bar -->
+  {{> alertBar}}
+
   <!-- Framework sections -->
+  {{> gettingStarted}}
+
+  <!-- Ecosystem -->
+  {{> ecosystem}}
+
+  <!-- Footer -->
+  {{> footer}}
+
 </template>

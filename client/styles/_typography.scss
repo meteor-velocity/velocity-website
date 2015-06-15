@@ -139,6 +139,16 @@ dl {
 }
 
 pre {
+  @include display(inline-flex);
   white-space: pre-wrap;
-  font-family: $base-font-family;
+  padding: $base-spacing;
+  background: $grey;
+  
+}
+
+code {
+  @include display(inline);
+  color: $darkgrey;
+  background: $grey;
+  font-family: $code-font-family;
 }

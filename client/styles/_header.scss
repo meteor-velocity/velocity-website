@@ -3,3 +3,9 @@
 .site-header {
   background: #fff;
 }
+
+.site-header__logo {
+  @include margin(2em 0);  
+}
+
+.site-header__nav {}

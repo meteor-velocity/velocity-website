@@ -2,11 +2,12 @@ $lightgreen: #84DEA7;
 $darkgreen: #21424B;
 $purple: #613AAD;
 $grey: #E7E7EC;
+$darkgrey: #515151;
+$happy: #74F2A7;
+$sad: #FF715D;
 
 $primary: $darkgreen;
 $secondary: $lightgreen;
-$happy: #74F2A7;
-$sad: #FF715D;
 
 $base-background-color: #f9f9f9;
 $base-font-color: $primary;
@@ -34,6 +35,7 @@ $hover-link-color: darken($header-font-color, 5%);
 
 $base-font-family: 'Roboto', Georgia, serif;
 $header-font-family: 'Roboto', Georgia, serif;
+$code-font-family: 'Menlo', mono-space;
 
 $border-radius: 3px;
 

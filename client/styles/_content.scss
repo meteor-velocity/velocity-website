@@ -1,0 +1,11 @@
+// Content area styles
+
+.content-header {
+  text-align: left;
+  @include margin(3em null);
+}
+
+.content-header__title {
+  text-transform: capitalize;
+}
+

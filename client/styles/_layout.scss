@@ -81,15 +81,15 @@ $desktop: new-breakpoint(min-width 100em 8);
 }
 
 // Content
-
-.content-area {
-  @include span-columns(12);
+.content-header {
+  @include span-columns(8);
+  @include shift(4);
 }
 
 .sidebar {
   @include span-columns(4 of 12);
 }
 
-.content-body {
+.content-area {
   @include span-columns(8 of 12);
 }

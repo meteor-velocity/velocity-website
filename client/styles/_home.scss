@@ -1,3 +1,6 @@
+// Home specific styles
+
+// Intro
 .home-intro__blurb {
   @include pad(3em 0);
   text-align: center;
@@ -5,4 +8,9 @@
   p {
     font-size: em(30);
   }
+}
+
+// Quickstart
+.quickstart-section {
+  @include margin(0 0 3em 0);
 }

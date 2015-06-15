@@ -2,10 +2,10 @@
   -webkit-font-smoothing: antialiased;
   background-color: $base-button-background;
   border-radius: $border-radius;
-  color: #fff;
+  color: $base-button-color;
   display: inline-block;
   font-size: $base-font-size;
-  font-weight: bold;
+  font-weight: regular;
   line-height: em(36);
   padding: 0 1em;
   text-decoration: none;
@@ -30,7 +30,7 @@
 }
 
 %btn--light {
-  color: #fff;
+  border: none;
 
   &:hover {
     color: #fff;
@@ -42,7 +42,7 @@
   @include primaryGradient;
   
   &:hover {
-    background: darken($primary, 10%);
+    background: darken($lightgreen, 10%);
   }
 }
 
