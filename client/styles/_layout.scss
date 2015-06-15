@@ -1,0 +1,116 @@
+// Setup
+$grid-columns: 12 !global;
+$column: modular-scale(1, 6.750em, $golden) !global;
+$gutter: modular-scale(1, 1em, $golden) !global;
+$max-width: em(1064) !global;
+$border-box-sizing: true !global;
+
+// Breakpoints
+$mobile: new-breakpoint(max-width 32em 4);
+$tablet: new-breakpoint(min-width 32em max-width 64em 8);
+$desktop: new-breakpoint(min-width 100em 8);
+
+// Layout
+
+.container {
+  @include outer-container;
+}
+
+.content {
+  @include clearfix();
+  @include span-columns(12);
+
+  @include media($mobile) {
+    @include span-columns(4);
+  }
+}
+
+// Header
+.site-header {
+  width: 100%;
+}
+
+.site-header__wrap {
+  @include clearfix();
+  @include span-columns(10);
+  @include shift(1);
+}
+
+.site-header__logo {
+  @include span-columns(3.25 of 10);
+  float: left;
+}
+
+.site-header__nav {
+  @include span-columns(3 of 10);
+  float: right;
+}
+
+// Footer
+.site-footer {}
+
+// Home
+.home-intro {
+  @include span-columns(12);
+}
+
+.home-intro__blurb {
+  @include clearfix();
+  @include span-columns(6);
+  @include shift(3);
+}
+
+.home-intro__quickstart {
+  @include span-columns(10);
+  @include shift(1);
+}
+
+.quickstart-section {
+  @include span-columns(5 of 12);
+}
+
+// Framework nav
+.framework-nav {
+  @include clearfix();
+  width: 100%;
+}
+
+.framework-nav__wrap {
+  @include span-columns(6);
+  @include shift(3);
+}
+
+// Content
+.content-header {
+  @include span-columns(8);
+  @include shift(4);
+}
+
+.sidebar {
+  @include clearfix();
+  @include span-columns(4 of 12);
+}
+
+.content-area {
+  @include clearfix();  
+  @include span-columns(8 of 12);
+}
+
+.feature-text {
+  @include span-columns(6);
+  @include shift(3);
+}
+
+// Framework box
+.feature-box {
+  @include clearfix();
+}
+
+.feature-box__wrap {
+  @include span-columns(10);
+  @include shift(1);
+}
+
+.feature-box__item {
+  @include span-columns(2.5 of 10);
+}

@@ -1,0 +1,40 @@
+<template name="gettingStarted">
+
+  {{#markdown}}# Getting Started{{/markdown}}
+
+  {{#markdown}}## Installation{{/markdown}}
+
+  {{!-- A section without default content--}}
+  {{> section name="gettingStarted__installation"}}
+
+
+
+  {{#section name="gettingStarted__package"}}
+  {{#markdown}}## Testing Packages
+Package testing is not supported by this framework.
+  {{/markdown}}
+  {{/section}}
+
+  {{#section name="gettingStarted__ci"}}
+    {{#markdown}}## CI
+`meteor --test --release velocity:METEOR@1.1.0.2_3`
+    {{/markdown}}
+  {{/section}}
+
+  {{#section name="gettingStarted__troubleshooting"}}
+  {{#markdown}}## Troubleshooting
+Each test mode (except server unit mode) creates a log file in the
+folder .meteor/local/log/. If something is not working you should
+have a look in the log file first. If you need help, look for an
+existing GitHub issue that describes your problem on
+[velocity-core](https://github.com/meteor-velocity/velocity-core).
+If you can't find your issue, create a new one.
+  {{/markdown}}
+  {{/section}}
+
+  {{#section name="gettingStarted__learning"}}
+  {{#markdown}}## Learning More
+  Sam and Jonas have written an excellent book on how to test a Meteor app. It goes into the details of how to mock users, etc. etc. (SAM/JONAS TO FILL IN)
+  {{/markdown}}
+  {{/section}}
+</template>

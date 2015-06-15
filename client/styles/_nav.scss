@@ -1,0 +1,57 @@
+// Generic
+.nav-list {
+
+}
+
+.nav-list__item {
+  @include display(inline-block);
+  @include margin(0 1em);
+
+  &:first-of-type {
+    @include margin(0 1em 0 0);
+  }
+
+  &:last-of-type {
+    @include margin(0 0 0 1em);
+  }
+
+}
+
+.nav-list__item > a {
+  color: $primary;
+
+  &.active {
+    background: $lightgreen;
+    border-radius: $border-radius;
+  }
+}
+
+// Header nav
+.site-header {
+  .nav-list {
+    @include pad(2em 0);
+  }
+
+  .nav-list__item {
+    text-transform: uppercase;
+  }
+}
+
+// Wide framework nav
+.framework-nav {
+  background: $grey;
+  @include pad($base-spacing);
+
+  .nav-list {
+    text-align: center;
+  }
+
+  .nav-list__item > a {
+    @include pad(0.25em $base-spacing);
+  }
+}
+
+.framework-nav__wrap {
+  
+}
+

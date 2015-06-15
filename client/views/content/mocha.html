@@ -1,0 +1,64 @@
+<template name="gettingStarted__description__mocha">
+    Easily and safely run mocha tests within the Meteor framework
+</template>
+
+<template name="gettingStarted__installation__mocha">
+  {{#markdown}}
+### 1 
+```bash
+meteor add mike:mocha ```
+
+### 2
+a) Run the app, open the reporter, and click to add sample tests [TODO screenshot]
+
+OR
+
+b) Copy the following test files into your project
+
+
+#### YOUR_APP/tests/mocha/client/sampleClientTest.js
+```javascript
+MochaWeb.testOnly(function(){
+  describe("a group of tests", function(){
+    it("should respect equality", function(){
+      chai.assert.equal(5,5);
+    });
+  });
+});
+```
+
+#### YOUR_APP/tests/mocha/server/sampleServerTest.js
+```javascript
+MochaWeb.testOnly(function(){
+  describe("Server initialization", function(){
+    it("should have a Meteor version defined", function(){
+      chai.assert(Meteor.release);
+    });
+  });
+});
+```
+
+### 3
+Change a test or your code and watch your test results change in real-time.
+
+{{/markdown}}
+</template>
+
+
+<template name="gettingStarted__package__mocha">
+{{#markdown}}
+## Package Testing w/ Mocha
+
+Modify your package.js file to include mike:mocha-package in the Package.onTest section like so:
+
+```javascript
+Package.onTest(function(api){
+  api.use(“mike:mocha-package”);
+  api.addFiles('tests/my-test.js', ['client', 'server']);
+});
+```
+Test your package with
+
+`meteor test-packages --driver-package respondly:test-reporter [YOUR_PACKAGE]`
+{{/markdown}}
+</template>
