@@ -77,11 +77,19 @@ a {
 }
 
 hr {
+  @include clearfix();
   border-bottom: $base-border;
   border-left: none;
   border-right: none;
   border-top: none;
   margin: $base-spacing 0;
+  width: 100%;
+
+  &.short {
+    width: 100px;
+    margin: $base-spacing auto;
+    border-bottom: 2px solid $base-font-color;
+  }
 }
 
 img,
