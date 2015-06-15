@@ -1,0 +1,41 @@
+<template name="gettingStarted__installation__casperjs">
+  {{#markdown}}
+### 1 
+```bash
+meteor add ldk:casperjs ```
+
+This package doesn't ship with [CasperJS](http://casperjs.org/). You need to have a running CasperJS installation on your system!
+
+If you write your tests with [CoffeeScript](coffeescript.org), use [PhantomJS](http://phantomjs.org/) 1.x, as they have [removed](https://github.com/blazer82/meteor-casperjs/issues/9)
+CoffeeScript support in 2.0.
+
+### 2
+a) Run the app, open the reporter, and click to add sample tests [TODO screenshot]
+
+OR
+
+b) Copy the following test file into your project
+
+
+#### YOUR_APP/tests/casperjs/client/sampleTest.js
+```javascript
+casper.test.begin("Sample Test", 2, function(test){
+  casper.start(casper.cli.get('rootUrl', function(){
+    this.waitForSelector('body', function(){
+      test.assert(true, "True is true");
+    });
+  }));
+  
+  casper.then(function(){
+    test.assertNot(false, "False is false");
+  });
+
+  casper.run(function(){ test.done() });
+});
+```
+
+### 3
+Change a test or your code and watch your test results change in real-time.
+
+{{/markdown}}
+</template>
