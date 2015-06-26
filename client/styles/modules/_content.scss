@@ -34,8 +34,4 @@
   h2 {
     @include margin(0 0 $base-spacing / 2 0);
   }
-
-  img {
-    @include pad($base-spacing * 3 0);
-  }
 }

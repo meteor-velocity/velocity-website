@@ -2,9 +2,8 @@
   width: 100%;
   background: $grey;
 
-  img {
+  .img {
     width: 125px;
-    @include pad(0);
   }
 
   p {
