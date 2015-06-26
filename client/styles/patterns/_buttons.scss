@@ -50,3 +50,14 @@
   color: $base-font-color;
   border-bottom: $base-border;
 }
+
+.btn--hollow {
+  background: none;
+  border-radius: $border-radius;
+  border: 1px solid #fff;
+  color: #fff;
+
+  &:hover {
+    color: $purple;
+  }
+}

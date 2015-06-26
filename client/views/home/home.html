@@ -10,21 +10,22 @@
         </div>
 
         <div class="home-intro__quickstart">
-          <div class="quickstart-section">
-            <h2>Quick Start</h2>
+          
+          <div class="home-intro__section">
+            <h2 class="light border upcase">Quick Start</h2>
 
-            <ul class="numbered">
-              <li>Add Jasmine to your application</li>
+            <ol class="default-ol">
+              <li><span class="ol-number">1</span>Add Jasmine to your application</li>
               <pre>
                  <code>meteor add sanjo:jasmine</code>
               </pre>
-              <li>Pour yourself a coffee</li>
-              <li>Go read the <a href="" class="btn--text">Guides</a></li>
-            </ul>
+              <li><span class="ol-number">2</span>Pour yourself a coffee</li>
+              <li><span class="ol-number">3</span>Go read the <a href="" class="btn--text">Guides</a></li>
+            </ol>
           </div>
 
-          <div class="quickstart-section">
-
+          <div class="home-intro__section last">
+            <img src="images/browser_frame.png" alt="Browser frame">
           </div>
         </div>
       </section>
@@ -32,12 +33,11 @@
     </div>
   </div>
 
+  <!-- Framework Nav -->
+  {{> frameworkNav }}
 
   <!-- Alert bar -->
   {{> alertBar}}
-
-  <!-- Framework Nav -->
-  {{> frameworkNav }}
 
   <!-- Framework sections -->
   {{> gettingStarted}}
