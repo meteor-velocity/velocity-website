@@ -21,3 +21,5 @@ Router.route '/contact', (-> @render 'contact'),
 # Router.route '/about'
 # Router.route '/screencast'
 Router.route '/blog-login'
+
+Router.route 'faq'
