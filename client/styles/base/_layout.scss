@@ -38,7 +38,6 @@ $desktop: new-breakpoint(min-width 100em 8);
 .site-header__wrap {
   @include clearfix();
   @include span-columns(10);
-  @include shift(1);
 }
 
 .site-header__logo {
@@ -53,6 +52,8 @@ $desktop: new-breakpoint(min-width 100em 8);
 
 // Footer
 .site-footer {
+  padding-top:15px;
+
   @include clearfix();
 
   @include media($mobile) {
@@ -62,20 +63,11 @@ $desktop: new-breakpoint(min-width 100em 8);
   }
 }
 
-.site-footer__wrap {
-  @include span-columns(10);
-  @include shift(1);
-
-  @include media($mobile) {
-    @include mobileReset();
-  }
-}
-
 .site-footer__section {
   @include span-columns(3 of 10);
-  
+
   &.last {
-    @include shift(4);
+    @include shift(7);
   }
 
   @include media($mobile) {
@@ -105,7 +97,7 @@ $desktop: new-breakpoint(min-width 100em 8);
 
 .home-intro__section {
   @include span-columns(4 of 10);
-  
+
   &.last {
     @include span-columns(5 of 10);
     @include shift(1);
@@ -141,8 +133,7 @@ $desktop: new-breakpoint(min-width 100em 8);
 }
 
 .content-header {
-  @include span-columns(8);
-  @include shift(4);
+  @include span-columns(12);
 }
 
 .sidebar {
@@ -151,8 +142,8 @@ $desktop: new-breakpoint(min-width 100em 8);
 }
 
 .content-area {
-  @include clearfix();  
-  @include span-columns(8 of 12);
+  @include clearfix();
+  @include span-columns(12 of 12);
 }
 
 .feature-text {

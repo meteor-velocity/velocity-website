@@ -32,10 +32,12 @@ h6 {
 
 h1 {
   font-size: $h1-font-size;
+  margin: $base-spacing 0 $base-spacing 0;
 }
 
 h2 {
   font-size: $h2-font-size;
+  font-weight:bold;
 }
 
 h3 {
@@ -134,7 +136,7 @@ ol {
     list-style-type: none;
     margin-bottom: $base-spacing / 2;
   }
-  
+
   &.default-ol {
     @extend %default-ol;
 
@@ -168,15 +170,18 @@ pre {
   white-space: inherit;
   padding: $base-spacing / 2;
   background: $grey;
-  
+  display: block;
+  margin: 20px 0;
 }
 
 code {
-  @include display(block);
+  @include display(inline);
   color: $darkgrey;
   background: $grey;
   font-family: $code-font-family;
   font-size: 13px;
   text-align: left;
   line-height: initial;
+  white-space: pre-wrap;
+  line-height:150%;
 }

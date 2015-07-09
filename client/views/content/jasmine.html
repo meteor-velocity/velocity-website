@@ -1,5 +1,5 @@
 <template name="gettingStarted__description__jasmine">
-    Easily write and run Jasmine tests for all your Meteor code
+    The Meteor Jasmine package allows you to use Jasmine for unit, integration and package testing.
 </template>
 
 <template name="gettingStarted__installation__jasmine">
@@ -14,12 +14,23 @@ to see the test results.
 ```bash
 meteor add velocity:html-reporter
 ```
+
+Add a client integration test to `tests/jasmine/client/integration/`
+
+```javascript
+describe("Client integration test", function () {
+  it("empty spec", function () {
+    expect(2 == 2);
+  });
+});
+```
+
+
 {{/markdown}}
 </template>
 
 <template name="gettingStarted__package__jasmine">
 {{#markdown}}
-## Package Testing
 
 Modify your package.js file to include sanjo:jasmine in the Package.onTest section like so:
 

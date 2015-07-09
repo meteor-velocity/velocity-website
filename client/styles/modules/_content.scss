@@ -32,6 +32,6 @@
 // Content text styles
 .content {
   h2 {
-    @include margin(0 0 $base-spacing / 2 0);
+    @include margin($base-spacing*2 0 $base-spacing/2 0);
   }
 }

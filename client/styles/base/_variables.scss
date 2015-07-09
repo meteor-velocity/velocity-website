@@ -17,7 +17,7 @@ $base-hover-color: #000;
 
 $base-font-size: 1em;
 $h1-font-size: em(36);
-$h2-font-size: em(18);
+$h2-font-size: em(24);
 $h3-font-size: em(16);
 $h4-font-size: em(16);
 $h5-font-size: 1em;
@@ -66,4 +66,3 @@ $form-field-spacing: $base-line-height;
   @include span-columns(4);
   @include shift(0);
 }
-
