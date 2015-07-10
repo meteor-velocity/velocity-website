@@ -28,3 +28,10 @@
   @include pad(3em 0);
   text-align: center;
 }
+
+// Content text styles
+.content {
+  h2 {
+    @include margin($base-spacing*2 0 $base-spacing/2 0);
+  }
+}

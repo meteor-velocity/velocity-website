@@ -12,8 +12,14 @@ Router.onAfterAction ->
 
 Router.route '/', (-> @render 'home'),
   name: 'home'
-Router.route '/getting-started'
-Router.route '/resources'
-Router.route '/about'
-Router.route '/screencast'
+
+Router.route '/contact', (-> @render 'contact'),
+  name: 'contact'
+
+# Router.route '/getting-started'
+# Router.route '/resources'
+# Router.route '/about'
+# Router.route '/screencast'
 Router.route '/blog-login'
+
+Router.route 'faq'

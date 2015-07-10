@@ -1,0 +1,17 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  background-color: $base-background-color;
+  color: $base-font-color;
+  font-family: $header-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+
+  /* position: relative;
+     &:after {
+     content: '';
+     @include position(absolute, 0 0);
+     @include size(100%);
+     opacity: 0.08;
+     background-image: url('images/design.png');
+     } */
+}

@@ -24,16 +24,16 @@ Package testing is not supported by this framework.
 <h2>CI</h2>
 {{#section name="gettingStarted__ci"}}
 {{#markdown}}
-`meteor --test --release velocity:METEOR@1.1.0.2_3`
+```bash
+meteor --test --release velocity:METEOR@1.1.0.2_3
+```
 {{/markdown}}
 {{/section}}
 
 <h2>Troubleshooting</h2>
 {{#section name="gettingStarted__troubleshooting"}}
 {{#markdown}}
-Each test mode (except server unit mode) creates a log file in the folder `.meteor/local/log/`.
-
-If something is not working you should have a look in the log file first. If you need help, look
+If something is not working you should have a look in the log file first (`/.meteor/local/log/FRAMEWORK.log`). If you need help, look
 for an existing GitHub issue that describes your problem on the
 [velocity](https://github.com/meteor-velocity/velocity/issues) repository. If you can't find your
 issue, create a new one.
@@ -43,9 +43,13 @@ issue, create a new one.
 <h2>Learning More</h2>
 {{#section name="gettingStarted__learning"}}
 {{#markdown}}
-Sam and Jonas have written an excellent book on how to test Meteor apps.
-It goes into the details of how to mock users, etc. etc. (SAM/JONAS TO FILL IN)
 [![](http://www.meteortesting.com/img/tmtm.gif)](http://www.meteortesting.com/?utm_source=Velocity&utm_medium=user-guide&utm_campaign=user-guide)
+
+Sam and Jonas have written an excellent book on how to test Meteor apps.
+It goes into the details of mocks, stubs, and the different kinds of testing, explaining it all
+with a fullly tested Meteor app.<br /><br /><br /><br />
+
+
 {{/markdown}}
 {{/section}}
 

@@ -10,6 +10,9 @@ $mobile: new-breakpoint(max-width 32em 4);
 $tablet: new-breakpoint(min-width 32em max-width 64em 8);
 $desktop: new-breakpoint(min-width 100em 8);
 
+// Debug
+/* * { outline: 1px solid red; }
+ */
 // Layout
 
 .container {
@@ -19,9 +22,11 @@ $desktop: new-breakpoint(min-width 100em 8);
 .content {
   @include clearfix();
   @include span-columns(12);
+  @include pad(0 2em);
 
   @include media($mobile) {
     @include span-columns(4);
+    @include pad(0 1em);
   }
 }
 
@@ -33,7 +38,6 @@ $desktop: new-breakpoint(min-width 100em 8);
 .site-header__wrap {
   @include clearfix();
   @include span-columns(10);
-  @include shift(1);
 }
 
 .site-header__logo {
@@ -47,7 +51,33 @@ $desktop: new-breakpoint(min-width 100em 8);
 }
 
 // Footer
-.site-footer {}
+.site-footer {
+  padding-top:15px;
+
+  @include clearfix();
+
+  @include media($mobile) {
+    .site-footer__section {
+      @include mobileReset();
+    }
+  }
+}
+
+.site-footer__section {
+  @include span-columns(3 of 10);
+
+  &.last {
+    @include shift(7);
+  }
+
+  @include media($mobile) {
+    @include mobileReset();
+
+    &.last {
+      @include mobileReset();
+    }
+  }
+}
 
 // Home
 .home-intro {
@@ -56,8 +86,8 @@ $desktop: new-breakpoint(min-width 100em 8);
 
 .home-intro__blurb {
   @include clearfix();
-  @include span-columns(6);
-  @include shift(3);
+  @include span-columns(10);
+  @include shift(1);
 }
 
 .home-intro__quickstart {
@@ -65,8 +95,21 @@ $desktop: new-breakpoint(min-width 100em 8);
   @include shift(1);
 }
 
-.quickstart-section {
-  @include span-columns(5 of 12);
+.home-intro__section {
+  @include span-columns(4 of 10);
+
+  &.last {
+    @include span-columns(5 of 10);
+    @include shift(1);
+  }
+
+  @include media($mobile) {
+    @include mobileReset();
+
+    &.last {
+      @include mobileReset();
+    }
+  }
 }
 
 // Framework nav
@@ -76,14 +119,21 @@ $desktop: new-breakpoint(min-width 100em 8);
 }
 
 .framework-nav__wrap {
-  @include span-columns(6);
-  @include shift(3);
+  @include span-columns(10);
+  @include shift(1);
+
+  @include media($mobile) {
+    @include mobileReset();
+  }
 }
 
 // Content
+.content {
+  @include span-columns(12);
+}
+
 .content-header {
-  @include span-columns(8);
-  @include shift(4);
+  @include span-columns(12);
 }
 
 .sidebar {
@@ -92,13 +142,19 @@ $desktop: new-breakpoint(min-width 100em 8);
 }
 
 .content-area {
-  @include clearfix();  
-  @include span-columns(8 of 12);
+  @include clearfix();
+  @include span-columns(12 of 12);
 }
 
 .feature-text {
   @include span-columns(6);
   @include shift(3);
+}
+
+.content-section {
+  @include media($mobile) {
+    @include mobileReset();
+  }
 }
 
 // Framework box
@@ -109,8 +165,23 @@ $desktop: new-breakpoint(min-width 100em 8);
 .feature-box__wrap {
   @include span-columns(10);
   @include shift(1);
+
+  @include media($mobile) {
+    @include mobileReset();
+  }
 }
 
 .feature-box__item {
   @include span-columns(2.5 of 10);
+
+  @include media($mobile) {
+    @include mobileReset();
+  }
+}
+
+// Alert bar
+.alert-bar__wrap {
+  @include span-columns(10);
+  @include shift(1);
+  @include display(flex);
 }

@@ -1,7 +1,5 @@
 // Generic
-.nav-list {
-
-}
+.nav-list {}
 
 .nav-list__item {
   @include display(inline-block);
@@ -14,7 +12,6 @@
   &:last-of-type {
     @include margin(0 0 0 1em);
   }
-
 }
 
 .nav-list__item > a {
@@ -30,10 +27,17 @@
 .site-header {
   .nav-list {
     @include pad(2em 0);
+    text-align: right;
   }
 
   .nav-list__item {
     text-transform: uppercase;
+
+    @include media($mobile) {
+      @include display(block);
+      @include margin(0);
+      text-align: right;
+    }
   }
 }
 
@@ -44,6 +48,12 @@
 
   .nav-list {
     text-align: center;
+  }
+
+  .nav-list__item {
+    @include media($mobile) {
+      @include margin(0);
+    }
   }
 
   .nav-list__item > a {
