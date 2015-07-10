@@ -6,7 +6,7 @@ Template.frameworkNav.events({
 
     // Activate button
     $('.js-framework-switch').removeClass('active');
-    
+
     var button = $(e.target);
     button.addClass('active');
 
@@ -17,7 +17,7 @@ Template.frameworkNav.events({
 });
 
 Template.frameworkNav.onRendered(function() {
-  Session.set('framework', 'jasmine');
+  Session.setDefault('framework', 'jasmine')
 
   framework = Session.get('framework');
   $('[data-framework="' + framework + '"]').addClass('active');

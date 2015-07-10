@@ -46,6 +46,12 @@ h3 {
   margin:  $base-spacing 0 $base-spacing/2 0;
 }
 
+h3.step {
+  font-size: $h2-font-size;
+  font-weight:bold;
+  display:inline;
+}
+
 h4 {
   font-size: $h4-font-size;
 }

@@ -1,22 +1,17 @@
 <template name="gettingStarted__description__mocha">
-    Easily and safely run mocha tests within the Meteor framework
+    Use mocha to run client and server integration tests or packages tests within Meteor.
 </template>
 
 <template name="gettingStarted__installation__mocha">
   {{#markdown}}
-### 1 
 ```bash
-meteor add mike:mocha ```
+$ meteor add mike:mocha
+```
 
-### 2
-a) Run the app, open the reporter, and click to add sample tests [TODO screenshot]
-
-OR
-
-b) Copy the following test files into your project
+Run the app, open the reporter (green dot), and click to add sample tests OR Copy the following test files into your project <br /><br />
 
 
-#### YOUR_APP/tests/mocha/client/sampleClientTest.js
+*YOUR_APP/tests/mocha/client/sampleClientTest.js*
 ```javascript
 MochaWeb.testOnly(function(){
   describe("a group of tests", function(){
@@ -27,7 +22,7 @@ MochaWeb.testOnly(function(){
 });
 ```
 
-#### YOUR_APP/tests/mocha/server/sampleServerTest.js
+*YOUR_APP/tests/mocha/server/sampleServerTest.js*
 ```javascript
 MochaWeb.testOnly(function(){
   describe("Server initialization", function(){
@@ -38,7 +33,6 @@ MochaWeb.testOnly(function(){
 });
 ```
 
-### 3
 Change a test or your code and watch your test results change in real-time.
 
 {{/markdown}}
@@ -47,8 +41,6 @@ Change a test or your code and watch your test results change in real-time.
 
 <template name="gettingStarted__package__mocha">
 {{#markdown}}
-## Package Testing w/ Mocha
-
 Modify your package.js file to include mike:mocha-package in the Package.onTest section like so:
 
 ```javascript
@@ -60,5 +52,19 @@ Package.onTest(function(api){
 Test your package with
 
 `meteor test-packages --driver-package respondly:test-reporter [YOUR_PACKAGE]`
+{{/markdown}}
+</template>
+
+<template name="gettingStarted__learning__mocha">
+{{#markdown}}
+More info is available on the [Mocha GitHub page](https://github.com/mad-eye/meteor-mocha-web).<br /><br />
+
+[![](http://www.meteortesting.com/img/tmtm.gif)](http://www.meteortesting.com/?utm_source=Velocity&utm_medium=user-guide&utm_campaign=user-guide)
+<br />
+Sam and Jonas have also written an excellent book on how to test Meteor apps.
+It goes into the details of mocks, stubs, and the different kinds of testing, explaining it all
+with a fullly tested Meteor app.
+
+<br /><br /><br /><br />
 {{/markdown}}
 </template>
