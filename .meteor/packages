@@ -6,18 +6,10 @@
 standard-app-packages
 http
 showdown
-jparker:gravatar
 chuangbo:marked
 chrismbeckett:fontawesome4
-iron:router@1.0.0-rc.0
-coffeescript
 underscore
 
-xolvio:md-blog
 spiderable
 percolatestudio:segment.io
-accounts-github
-accounts-ui
-alanning:roles
-service-configuration
 fourseven:scss

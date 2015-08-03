@@ -1,3 +1,3 @@
 #!/bin/bash
 
-meteor --settings settings.json
+meteor --settings settings.json --port 5000
