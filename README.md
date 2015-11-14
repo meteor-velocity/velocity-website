@@ -1,14 +1,4 @@
-# velocity-website
-Website at velocity.meteor.com
+# Velocity Website
+Xolv.io handed the ownership of Meteor testing back to the MDG. 
 
-To execute locally:
-
-```
-$ meteor --settings settings.json
-```
-
-or use the included script:
-
-```
-$ ./run
-```
+[Read the announcement →](http://xolv.io/velocity-announcement) for more details.

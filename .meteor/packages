@@ -5,11 +5,5 @@
 
 standard-app-packages
 http
-showdown
-chuangbo:marked
-chrismbeckett:fontawesome4
-underscore
-
-spiderable
-percolatestudio:segment.io
-fourseven:scss
+iron:router
+standard-minifiers
